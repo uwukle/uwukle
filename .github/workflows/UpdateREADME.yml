@@ -35,12 +35,10 @@ jobs:
       - name: Create updated block
         run: |
           {
-            echo '[KLE.cs](https://github.com/${{ github.repository }}/blob/main/KLE.cs)'
-            echo ''
             echo '```csharp'
             cat KLE.cs
-            echo '```'
-            echo ''
+            echo '```  '
+            echo '[KLE.cs](https://github.com/${{ github.repository }}/blob/main/KLE.cs)  '
             echo '**Type:** C# source file  '
             echo '**Size:** ${{ steps.meta.outputs.size_kb }} KB (${{ steps.meta.outputs.size_bytes }} bytes)  '
             echo '**Lines:** ${{ steps.meta.outputs.lines }}  '

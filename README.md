@@ -10,6 +10,7 @@ Hi! My name is UwU KLE
 
 
 <!-- CODE_START -->
+```csharp
 ﻿/**
   *      _________  ____  ____ 
   *     || ctrl  ||||c ||||v ||
@@ -43,4 +44,5 @@ public sealed class KLE
 
     public string[] Tools => ["Visual Studio", "Git"];
 }
+```
 <!-- CODE_END -->

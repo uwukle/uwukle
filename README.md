@@ -47,7 +47,6 @@ public sealed class KLE
     public string[] Tools => ["Visual Studio", "Git"];
 }
 ```
-
 **Type:** C# source file  
 **Size:** .81 KB (837 bytes)  
 **Lines:** 33  

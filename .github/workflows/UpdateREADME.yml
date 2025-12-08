@@ -3,6 +3,7 @@ name: Update README
 on:
   push:
     paths: ['KLE.cs']
+  workflow_dispatch:
 
 jobs:
   update:

@@ -50,12 +50,16 @@ public sealed class KLE
 
 ---
 
-### File Properties
 
-**Type:** C# source file 
-**Size:** .81 KB (837 bytes) |
-**Lines:** 33 |
-**Last modified:** 2025-12-08 06:52:21 |
-**Commit:** [9d8cce8](https://github.com/uwukle/uwukle/commit/9d8cce8) |
-**Path:** [`/KLE.cs`](https://github.com/uwukle/uwukle/blob/main/KLE.cs) |
+**Type:** C# source file
+
+**Size:** .81 KB (837 bytes)
+
+**Lines:** 33
+
+**Last modified:** 2025-12-08 06:54:31
+
+**Commit:** [d20c640](https://github.com/uwukle/uwukle/commit/d20c640)
+
+**Path:** [`/KLE.cs`](https://github.com/uwukle/uwukle/blob/main/KLE.cs)
 <!-- CODE_END -->

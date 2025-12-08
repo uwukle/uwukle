@@ -19,8 +19,14 @@ jobs:
       
       - name: Replace code in README
         run: |
+          echo '```csharp' > temp_code.md
+          cat KLE.cs >> temp_code.md
+          echo '```' >> temp_code.md
+
           sed -i '/<!-- CODE_START -->/,/<!-- CODE_END -->/{//!d}' README.md
-          sed -i '/<!-- CODE_START -->/r KLE.cs' README.md
+          sed -i '/<!-- CODE_START -->/r temp_code.md' README.md
+          
+          rm temp_code.md
           
       - name: Commit changes
         run: |

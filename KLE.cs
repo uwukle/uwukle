@@ -19,9 +19,9 @@ public sealed class KLE
 
     public string ShortName => "kle";
 
-    public string GitHubProfileUrl => "https://github.com/uwukle";
-
     public string EmailAddress => "dev.uwukle@gmail.com";
+
+    public string GitHubProfileUrl => "https://github.com/uwukle";
 
     public string DiscordProfileUrl => "https://discord.com/users/dev.uwukle";
 

@@ -10,6 +10,8 @@ Hi! My name is UwU KLE
 
 
 <!-- CODE_START -->
+[KLE.cs](https://github.com/uwukle/uwukle/blob/main/KLE.cs)
+
 ```csharp
 ﻿/**
   *      _________  ____  ____ 
@@ -45,4 +47,15 @@ public sealed class KLE
     public string[] Tools => ["Visual Studio", "Git"];
 }
 ```
+
+---
+
+### File Properties
+
+**Type:** C# source file 
+**Size:** .81 KB (837 bytes) |
+**Lines:** 33 |
+**Last modified:** 2025-12-08 06:52:21 |
+**Commit:** [9d8cce8](https://github.com/uwukle/uwukle/commit/9d8cce8) |
+**Path:** [`/KLE.cs`](https://github.com/uwukle/uwukle/blob/main/KLE.cs) |
 <!-- CODE_END -->

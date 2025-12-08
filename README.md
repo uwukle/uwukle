@@ -7,3 +7,8 @@ Hi! My name is UwU KLE
 ### You can contact me at 
 * mail: [dev.uwukle@gmail.com](mailto:dev.uwukle@gmail.com)
 * discord: [dev.uwukle](https://discord.com/users/dev.uwukle)
+
+
+<!-- CODE_START -->
+Some Code Here
+<!-- CODE_END -->

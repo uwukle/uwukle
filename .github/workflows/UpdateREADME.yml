@@ -17,21 +17,50 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Replace code in README
+      - name: Get file metadata
+        id: meta
         run: |
-          echo '```csharp' > temp_code.md
-          cat KLE.cs >> temp_code.md
-          echo '```' >> temp_code.md
+          SIZE_BYTES=$(wc -c < KLE.cs)
+          SIZE_KB=$(echo "scale=2; $SIZE_BYTES/1024" | bc)
+          LAST_COMMIT=$(git log -1 --format="%cd" --date=format:"%Y-%m-%d %H:%M:%S" -- KLE.cs 2>/dev/null || date +"%Y-%m-%d %H:%M:%S")
+          COMMIT_HASH=$(git log -1 --format="%h" -- KLE.cs 2>/dev/null || echo "N/A")
+          LINES=$(wc -l < KLE.cs)
+          
+          echo "size_kb=$SIZE_KB" >> $GITHUB_OUTPUT
+          echo "size_bytes=$SIZE_BYTES" >> $GITHUB_OUTPUT
+          echo "last_commit=$LAST_COMMIT" >> $GITHUB_OUTPUT
+          echo "commit_hash=$COMMIT_HASH" >> $GITHUB_OUTPUT
+          echo "lines=$LINES" >> $GITHUB_OUTPUT
+      
+      - name: Create updated block
+        run: |
+          {
+            echo '[KLE.cs](https://github.com/${{ github.repository }}/blob/main/KLE.cs)'
+            echo ''
+            echo '```csharp'
+            cat KLE.cs
+            echo '```'
+            echo ''
+            echo '---'
+            echo ''
+            echo '### File Properties'
+            echo ''
+            echo '**Type:** C# source file '
+            echo '**Size:** ${{ steps.meta.outputs.size_kb }} KB (${{ steps.meta.outputs.size_bytes }} bytes) |'
+            echo '**Lines:** ${{ steps.meta.outputs.lines }} |'
+            echo '**Last modified:** ${{ steps.meta.outputs.last_commit }} |'
+            echo '**Commit:** [${{ steps.meta.outputs.commit_hash }}](https://github.com/${{ github.repository }}/commit/${{ steps.meta.outputs.commit_hash }}) |'
+            echo '**Path:** [`/KLE.cs`](https://github.com/${{ github.repository }}/blob/main/KLE.cs) |'
+          } > temp_block.md
 
           sed -i '/<!-- CODE_START -->/,/<!-- CODE_END -->/{//!d}' README.md
-          sed -i '/<!-- CODE_START -->/r temp_code.md' README.md
-          
-          rm temp_code.md
-          
+          sed -i '/<!-- CODE_START -->/r temp_block.md' README.md
+          rm temp_block.md
+      
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
-          git commit -m "Update code in README" || echo "No changes to commit"
+          git commit -m "Update README with KLE.cs" || echo "No changes"
           git push

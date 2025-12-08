@@ -39,11 +39,17 @@ jobs:
             cat KLE.cs
             echo '```'
             echo '[KLE.cs](https://github.com/${{ github.repository }}/blob/main/KLE.cs)'
+            echo ''
             echo '**Type:** C# source file'
+            echo ''
             echo '**Size:** ${{ steps.meta.outputs.size_kb }} KB (${{ steps.meta.outputs.size_bytes }} bytes)'
+            echo ''
             echo '**Lines:** ${{ steps.meta.outputs.lines }}'
+            echo ''
             echo '**Last modified:** ${{ steps.meta.outputs.last_commit }}'
+            echo ''
             echo '**Commit:** [${{ steps.meta.outputs.commit_hash }}](https://github.com/${{ github.repository }}/commit/${{ steps.meta.outputs.commit_hash }})'
+            echo ''
             echo '**Path:** [`/KLE.cs`](https://github.com/${{ github.repository }}/blob/main/KLE.cs)'
           } > temp_block.md
 

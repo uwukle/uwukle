@@ -1,22 +1,25 @@
-name: Embed KLE.cs in README
+name: Update README
 
 on:
   push:
-    paths: [ 'KLE.cs' ]
-  
-  workflow_dispatch:
+    paths: ['KLE.cs']
 
 jobs:
-  embed:
+  update:
     runs-on: ubuntu-latest
     
     steps:
       - uses: actions/checkout@v4
       
-      - name: Update README with code
-        uses: bdougie/take-action@main
-        with:
-          message: "KLE.cs:"
-          append: true
-          path: "README.md"
-          source: "KLE.cs"
+      - name: Replace code in README
+        run: |
+          sed -i '/<!-- CODE_START -->/,/<!-- CODE_END -->/{//!d}' README.md
+          sed -i '/<!-- CODE_START -->/r KLE.cs' README.md
+          
+      - name: Commit changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update code in README" || echo "No changes to commit"
+          git push

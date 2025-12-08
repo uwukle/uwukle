@@ -1,0 +1,22 @@
+name: Embed KLE.cs in README
+
+on:
+  push:
+    paths: [ 'KLE.cs' ]
+  
+  workflow_dispatch:
+
+jobs:
+  embed:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Update README with code
+        uses: bdougie/take-action@main
+        with:
+          message: "KLE.cs:"
+          append: true
+          path: "README.md"
+          source: "KLE.cs"

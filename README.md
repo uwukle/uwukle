@@ -40,6 +40,8 @@ public sealed class KLE
 
     public string SteamProfileUrl => "https://steamcommunity.com/id/uwukle/";
 
+    public string YouTubeСhannelUrl => "https://www.youtube.com/@uwukle";
+
     public string[] ProgrammingLanguages => ["CSharp", "LUA", "C", "Cpp"];
 
     public string[] Tools => ["Visual Studio", "Git"];
@@ -47,9 +49,9 @@ public sealed class KLE
 ```  
 [KLE.cs](https://github.com/uwukle/uwukle/blob/main/KLE.cs)  
 **Type:** C# source file  
-**Size:** .81 KB (837 bytes)  
-**Lines:** 33  
-**Last modified:** 2025-12-08 07:48:56  
-**Commit:** [7a83406](https://github.com/uwukle/uwukle/commit/7a83406)  
+**Size:** .89 KB (913 bytes)  
+**Lines:** 35  
+**Last modified:** 2026-01-01 07:53:10  
+**Commit:** [4816075](https://github.com/uwukle/uwukle/commit/4816075)  
 **Path:** [`/KLE.cs`](https://github.com/uwukle/uwukle/blob/main/KLE.cs)
 <!-- CODE_END -->

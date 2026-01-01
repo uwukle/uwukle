@@ -27,6 +27,8 @@ public sealed class KLE
 
     public string SteamProfileUrl => "https://steamcommunity.com/id/uwukle/";
 
+    public string YouTubeСhannelUrl => "https://www.youtube.com/@uwukle";
+
     public string[] ProgrammingLanguages => ["CSharp", "LUA", "C", "Cpp"];
 
     public string[] Tools => ["Visual Studio", "Git"];
